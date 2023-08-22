@@ -4,8 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-// API documentation: https://raspberrypi.github.io/pico-sdk-doxygen/modules.html
-
 // Fade an LED between low and high brightness.
 // An interrupt handler updates the PWM slice's output level each time the counter wraps.
 

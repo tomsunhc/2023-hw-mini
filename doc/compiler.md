@@ -11,6 +11,10 @@ About 2..5 gigabytes of hard drive space is required by the Pico SDK and associa
 
 Git, CMake and a cross compiler are used by almost all full projects as well.
 
+You can use this
+[compiler install script on Linux and macOS](../scripts/install_crosss_compiler.sh)
+or manually below.
+
 ## macOS
 
 [Homebrew](https://brew.sh)

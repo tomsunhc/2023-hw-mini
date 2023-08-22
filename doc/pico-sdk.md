@@ -1,4 +1,32 @@
-# Download Pico SDK
+# C / C++ on the Pico via Pico SDK
+
+Install
+[CMake, Git, and the 32-bit ARM compiler](./compiler.md)
+on the laptop.
+Then this software project can be built, which downloads the
+[Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/)
+automatically.
+
+Configure the CMake project once, unless changing an option or doing a major change to code:
+
+```sh
+cmake -B build
+```
+
+Build the .uf2 file(s) to upload to the Pico:
+
+```sh
+cmake --build build
+```
+
+This builds file "build/src/pwm/led_fade/pwm_led_fade.uf2".
+The .uf2 file is the binary image to
+[upload to the Pico board](./upload.md)
+for a particular program.
+
+## Manual Pico SDK install
+
+This usually isn't necessary.
 
 Download the Pico SDK like:
 

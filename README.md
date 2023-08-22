@@ -2,39 +2,25 @@
 
 [![ci](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml/badge.svg)](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml)
 
----
+This project uses the Raspberry
+[Pi Pico H](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
+(no wireless, with header pins).
+A breadboard, Pi Pico H, photocell, resistor, and wire kit are provided to each hardware miniproject student.
+Each student must provide a USB cable that connects to their macOS, Windows, or Linux laptop and has a micro-USB connector on the other end to plug into the Pico.
+The student laptop is used to program the Pico.
+The laptop software works on macOS, Windows, and Linux.
 
-[Miniproject assignment](./assignment.md)
+Use a programming language of your choice such as:
 
----
+* [MicroPython](./doc/micropython.md)
+* C/C++ via [Pico SDK](./doc/pico-sdk.md)
 
-This project is accomplished using the Raspberry Pi Pico, Photocell, breadboard and associated wires and resistors.
-The student laptop is used to program the Pico--Pico software development kit (SDK) work on macOS, Windows, and Linux.
+We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED.
 
-Install
-[CMake, Git, and the 32-bit ARM compiler](./doc/compiler.md)
-on the laptop.
-Then this software project can be built, which downloads the
-[Pico SDK](./doc/pico-sdk.md)
-automatically.
-
-Configure the CMake project once, unless changing an option or doing a major change to code:
-
-```sh
-cmake -B build
-```
-
-To save build time, pick a particular target to build like:
-
-```sh
-cmake --build build -t pwm_led_fade
-```
-
-This builds file "build/src/pwm/led_fade/pwm_led_fade.uf2".
-The .uf2 file is the binary image to
-[upload to the Pico board](./doc/upload.md)
-for a particular program.
+Assignment details released first week of class!
 
 ---
 
 [Troubleshooting](./doc/trouble.md)
+
+Reference: [Getting Started with Pi Pico book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)

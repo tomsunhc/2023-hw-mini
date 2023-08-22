@@ -5,19 +5,20 @@ set -e
 version=3.27.3
 
 # determine OS and arch
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+case "$OSTYPE" in
+linux*)
 os="linux"
 arch=$(uname -m)
 stub=""
-[[ "$arch" == "arm64" ]] && arch="aarch64"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+[[ "$arch" == "arm64" ]] && arch="aarch64";;
+darwin*)
 os="macos"
 arch="universal"
-stub="CMake.app/Contents/"
-else
+stub="CMake.app/Contents/";;
+*)
 echo "$OSTYPE not supported"
-exit 1
-fi
+exit 1;;
+esac
 
 # compose URL
 name=cmake-${version}-${os}-${arch}
@@ -26,7 +27,6 @@ archive_path=$HOME/${archive}
 url=https://github.com/Kitware/CMake/releases/download/v${version}/${archive}
 
 # download and extract CMake
-
 echo "${url} => ${archive_path}"
 curl --location --no-clobber --output ${archive_path} ${url}
 

@@ -1,11 +1,69 @@
-# USB console
+# USB-serial console
 
-The USB console (if used by your program) uses the TinyUSB library.
-CMake must be configured as in the
-[hello_usb](./src/hello_usb/CMakeLists.txt)
-to enable USB and disable UART for the particular target.
-Each operating system has a distinct way of accessing USB-serial gateways:
+The USB-serial console is used by:
 
-* Windows: look in Device Manager under Ports-there should be COM* device. Use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) to connect at 115200 baud serial
-* Linux: look under /dev/ttyACM* and connect with PuTTY or `screen /dev/ttyACM0 115200`
-* macOS: look under "/dev/cu.usbserial" and connect with PuTTY `brew install putty` or `screen /dev/cu.usbserial 115200`
+* [MicroPython REPL](./micropython.md) and Python scripts
+* C / C++ programs using the [Pico SDK and TinyUSB library](./pico-sdk.md). Example:  [hello_usb](./src/hello_usb/CMakeLists.txt)
+
+Operating systems access USB-serial console distinctly as below.
+If using MicroPython, the REPL is the default program that runs on the Pico:
+
+```python
+>>> print("Hello")
+Hello
+```
+
+Once connected to the console, you can copy-paste in scripts, or
+[upload the .py scripts](./upload.md)
+or use IDEs like Thonny or
+[rshell](https://github.com/dhylands/rshell/)
+to test scripts and upload scripts.
+
+## Windows
+
+Look in Windows Device Manager under "Ports".
+There should be "COM*" device of a specific number e.g. COM3.
+
+![Windows Device Manager ports](https://cdn.sparkfun.com/assets/3/9/f/5/8/521541a3757b7f92498b456a.jpg)
+
+Use
+[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+to connect at 115200 baud serial.
+Under "Serial line" in PuTTY enter "COM3" or whatever device name is seen in Windows Device Manager.
+This device name may change if you plug the Pico into a different USB port.
+
+![PuTTY serial port](https://www.scivision.dev/images/2016/putty-serial-main.png)
+
+## macOS
+
+Depending on the Pico program used, the USB-serial device will show up in either of these mount points:
+
+TinyUSB:
+
+```
+ls /dev/cu.usbserial*
+```
+
+or MicroPython REPL:
+
+```
+ls /dev/tty.usbmodem*
+```
+
+Connect using
+[screen](https://linux.die.net/man/1/screen)
+like:
+
+```sh
+screen /dev/tty.usbmodem* 115200
+```
+
+## Linux
+
+Connect using
+[screen](https://linux.die.net/man/1/screen)
+like:
+
+```sh
+screen /dev/ttyACM* 115200
+```

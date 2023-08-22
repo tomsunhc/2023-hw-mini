@@ -25,18 +25,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: "install ARM GCC (Linux)"
-      if: runner.os == 'Linux'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -yq gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
-
-    - name: "install ARM GCC (macOS)"
-      if: runner.os == 'macOS'
-      run: brew install --cask gcc-arm-embedded
+    - name: "install ARM GCC cross compiler"
+      run: bash scripts/install_cross_compiler.sh
 
     - name: "CMake configure"
-      run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release
+      run: cmake -B build
 
     - name: "CMake build"
       run: cmake --build build --parallel

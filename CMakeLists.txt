@@ -11,11 +11,6 @@ if(NOT DEFINED PICO_BOARD)
   set(PICO_BOARD pico)
 endif()
 
-# cross compile target system parameters -- the host system doesn't matter.
-# that's why it's set to "Linux" "ARM" as that's the Pico target.
-set(CMAKE_SYSTEM_NAME "Linux")
-set(CMAKE_SYSTEM_PROCESSOR "ARM")
-
 # initialize the SDK based on PICO_SDK_PATH, before project()
 include(cmake/pico_sdk_import.cmake)
 
@@ -30,9 +25,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # inspect environment and inform
-message(STATUS "CMAKE_EXE_LINKER_FLAGS_INIT: ${CMAKE_EXE_LINKER_FLAGS_INIT}
+message(STATUS "Flags:
+CMAKE_EXE_LINKER_FLAGS_INIT: ${CMAKE_EXE_LINKER_FLAGS_INIT}
 CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}
-CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}"
+CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}
+
+CMAKE_HOST_SYSTEM_NAME: ${CMAKE_HOST_SYSTEM_NAME}
+CMAKE_HOST_SYSTEM_PROCESSOR: ${CMAKE_HOST_SYSTEM_PROCESSOR}
+
+Target: ${PICO_PLATFORM}
+CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}
+CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}
+"
 )
 
 # --- auto-ignore build directory
