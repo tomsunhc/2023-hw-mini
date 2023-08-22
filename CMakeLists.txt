@@ -11,6 +11,11 @@ if(NOT DEFINED PICO_BOARD)
   set(PICO_BOARD pico)
 endif()
 
+# cross compile target system parameters -- the host system doesn't matter.
+# that's why it's set to "Linux" "ARM" as that's the Pico target.
+set(CMAKE_SYSTEM_NAME "Linux")
+set(CMAKE_SYSTEM_PROCESSOR "ARM")
+
 # initialize the SDK based on PICO_SDK_PATH, before project()
 include(cmake/pico_sdk_import.cmake)
 

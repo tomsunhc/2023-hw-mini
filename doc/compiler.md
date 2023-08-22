@@ -21,14 +21,11 @@ Install Git, CMake build system, and ARM cross-compiler by:
 ```sh
 brew install cmake git
 
-brew tap ArmMbed/homebrew-formulae
-
-brew install arm-none-eabi-gcc
+brew install --cask gcc-arm-embedded
 ```
 
-The
-[brew tap](https://github.com/ARMmbed/homebrew-formulae)
-statement connects to the ArmMbed team cross compiler repository.
+The cross-compiler executables have a prefix "arm-none-eabi-" that are linked into `$(brew --prefix)/bin` for easy use from the command line.
+
 It's likely the macOS laptop has an Apple Silicon CPU.
 If so, it's necessary to
 [enable Rosetta](https://support.apple.com/en-us/HT211861).
