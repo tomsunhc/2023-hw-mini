@@ -1,0 +1,44 @@
+name: ci
+
+env:
+    HOMEBREW_NO_INSTALL_CLEANUP: 1
+
+on:
+  push:
+    paths:
+    - "**/CMakeLists.txt"
+    - "**.cmake"
+    - "**.c"
+    - ".github/workflows/ci.yml"
+
+jobs:
+
+  core:
+    timeout-minutes: 15
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: "install ARM GCC (Linux)"
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -yq gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+
+    - name: "install ARM GCC (macOS)"
+      if: runner.os == 'macOS'
+      run: |
+        brew tap ArmMbed/homebrew-formulae
+        brew install arm-none-eabi-gcc
+
+    - name: "CMake configure"
+      run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release
+
+    - name: "CMake build"
+      run: cmake --build build --parallel
