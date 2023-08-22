@@ -33,9 +33,7 @@ jobs:
 
     - name: "install ARM GCC (macOS)"
       if: runner.os == 'macOS'
-      run: |
-        brew tap ArmMbed/homebrew-formulae
-        brew install arm-none-eabi-gcc
+      run: brew install --cask gcc-arm-embedded
 
     - name: "CMake configure"
       run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release

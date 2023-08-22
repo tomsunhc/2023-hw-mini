@@ -29,7 +29,7 @@ where "build" is the relative or absolute path to the build directory specified 
 cmake -B build
 ```
 
-gives results like:
+gives results on Linux like:
 
 ```
 PICO_SDK_PATH is /home/runner/work/2023-hw-mini/2023-hw-mini/build/_deps/pico_sdk-src
@@ -62,6 +62,15 @@ TinyUSB available at /home/runner/work/2023-hw-mini/2023-hw-mini/build/_deps/pic
 -- Generating done (0.1s)
 -- Build files have been written to: /home/runner/work/2023-hw-mini/2023-hw-mini/build
 ```
+
+on macOS the configure output is like:
+
+```
+
+
+```
+
+---
 
 If a CMake configure error occurs,
 [troubleshooting](./trouble.md)
