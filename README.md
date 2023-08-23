@@ -15,7 +15,7 @@ Use a programming language of your choice such as:
 * [MicroPython](./doc/micropython.md)
 * C/C++ via [Pico SDK](./doc/pico-sdk.md)
 
-We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED.
+We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED in a **multithread program** using both CPU cores of the Pico RP2040 dual-core CPU.
 
 Assignment details released first week of class!
 
