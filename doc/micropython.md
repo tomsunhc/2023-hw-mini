@@ -9,9 +9,23 @@ In general across computing platforms, compiled code such as C / C++ can offer b
 This application is not computationally demanding.
 In general, we often prototype in a scripted language like Python, only moving to compiled languages if necessary to compute fast enough.
 
+MicroPython's [standard library](https://docs.micropython.org/en/latest/library/index.html#micropython-libraries)
+supports typical Python features including
+[asyncio concurrency](https://docs.micropython.org/en/latest/library/asyncio.html)
+and libraries specific to the
+[Pico](https://docs.micropython.org/en/latest/library/index.html#libraries-specific-to-the-rp2040).
+The RP2040 dual core CPU of the Pico supports MicroPython GIL-less VM, so
+[parallel executing threads](https://github.com/raspberrypi/pico-micropython-examples/blob/master/multicore/multicore.py)
+are possible in Python on the Pico.
+
+Practically speaking, certain tasks I see students using the much more expensive and far more power-hungry full Raspberry Pi ARM for can often be done on the Pi Pico.
+Power and size are often key limitations in class projects that might be solved if the problem can fit into a Pi Pico vs. a full ARM Raspberry Pi.
+
 After installing MicroPython below, the Pico will not flash any LEDs (unless programmed) to, so next
 [connect to the Pico REPL console](./console.md)
-to interact with the Pico in the laptop Terminal.
+to interact with the Pico in the laptop Terminal, use IDEs like Thonny or use
+[rshell](./rshell.md)
+to edit and upload Python scripts that autorun on the Pico.
 
 ## Install MicroPython
 

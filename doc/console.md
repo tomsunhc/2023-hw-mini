@@ -13,11 +13,9 @@ If using MicroPython, the REPL is the default program that runs on the Pico:
 Hello
 ```
 
-Once connected to the console, you can copy-paste in scripts, or
-[upload the .py scripts](./upload.md)
-or use IDEs like Thonny or
-[rshell](https://github.com/dhylands/rshell/)
-to test scripts and upload scripts.
+Once connected to the console, you can copy-paste in scripts, or use
+[rshell](./rshell.md)
+to edit and upload autorun MicroPython scripts.
 
 ## Windows
 
