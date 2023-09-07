@@ -2,6 +2,8 @@
 
 [![ci](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml/badge.svg)](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml)
 
+[ASSIGNMENT](./assigment.md)
+
 This project uses the Raspberry
 [Pi Pico H](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
 (no wireless, with header pins).
@@ -16,8 +18,6 @@ Use a programming language of your choice such as:
 * C/C++ via [Pico SDK](./doc/pico-sdk.md)
 
 We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED in a **multithread program** using both CPU cores of the Pico RP2040 dual-core CPU.
-
-Assignment details released first week of class!
 
 ---
 
