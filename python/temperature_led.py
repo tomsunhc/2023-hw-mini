@@ -1,7 +1,13 @@
-# refs:
-#  https://github.com/raspberrypi/pico-micropython-examples/blob/master/multicore/multicore.py
-#  https://github.com/raspberrypi/pico-micropython-examples/blob/master/adc/temperature.py
-#  https://docs.micropython.org/en/latest/library/_thread.html
+"""
+MicroPython Pi Pico - simultaneous (dual-core CPU) threads for flashing LED
+and reading onboard temperature sensor
+
+references:
+
+https://github.com/raspberrypi/pico-micropython-examples/blob/master/multicore/multicore.py
+https://github.com/raspberrypi/pico-micropython-examples/blob/master/adc/temperature.py
+https://docs.micropython.org/en/latest/library/_thread.html
+"""
 
 import time
 import _thread
