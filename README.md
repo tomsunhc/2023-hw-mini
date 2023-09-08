@@ -14,7 +14,7 @@ The laptop software works on macOS, Windows, and Linux.
 
 Use a programming language of your choice such as:
 
-* [MicroPython](./doc/micropython.md) (recommended, faster, easier)
+* [MicroPython](./doc/micropython.md) (recommended, faster, easier) [Raspberry Pi Pico MicroPython Tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico)
 * C/C++ via [Pico SDK](./doc/pico-sdk.md) (optional, more difficult, requires a cross-compiler on the laptop)
 
 We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED in a **multithread program** using both CPU cores of the Pico RP2040 dual-core CPU.
