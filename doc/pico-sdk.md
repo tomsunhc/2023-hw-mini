@@ -50,6 +50,15 @@ cmake -S 2023-hw-mini/ -B /tmp/build
 cmake --build /tmp/build
 ```
 
+---
+
+If you get a build error like:
+
+> arm-none-eabi-gcc: fatal error: cannot read spec file 'nosys.specs': No such file or directory
+
+Then something is wrong with the cross-compiler setup, and I don't know the solution off-hand.
+Perhaps switch to MicroPython instead of C/C++.
+
 ## Manual Pico SDK install
 
 **NOTE: This usually isn't necessary--just use the automatic process above.**

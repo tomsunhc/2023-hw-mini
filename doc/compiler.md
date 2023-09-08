@@ -35,6 +35,19 @@ If so, it's necessary to
 [enable Rosetta](https://support.apple.com/en-us/HT211861).
 Rosetta enables most x86 apps on Apple Silicon at nearly full performance.
 
+Note: if on macOS you get a build error like:
+
+> arm-none-eabi-gcc: fatal error: cannot read spec file 'nosys.specs': No such file or directory
+
+and you've installed the GCC cross-compiler via:
+
+```sh
+brew install --cask gcc-arm-embedded
+```
+
+Then something is wrong with the cross-compiler setup, and I don't know the solution off-hand.
+Perhaps switch to MicroPython instead of C/C++.
+
 ## Linux
 
 Install Git, CMake build system, and ARM cross-compiler on:
@@ -51,6 +64,13 @@ sudo apt install git make cmake g++ gcc-arm-none-eabi libnewlib-arm-none-eabi li
 NOTE: if upon `cmake -B build` you get an immediate error about CMake being too old,
 please install a newer CMake via
 [scripts/install_cmake.sh](../scripts/install_cmake.sh)
+
+Note: if you get a build error like:
+
+> arm-none-eabi-gcc: fatal error: cannot read spec file 'nosys.specs': No such file or directory
+
+Then something is wrong with the cross-compiler setup, and I don't know the solution off-hand.
+Perhaps switch to MicroPython instead of C/C++.
 
 ## Windows
 
