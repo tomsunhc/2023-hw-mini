@@ -26,7 +26,7 @@ for a particular program.
 
 ## Manual Pico SDK install
 
-This usually isn't necessary.
+**NOTE: This usually isn't necessary--just use the automatic process above.**
 
 Download the Pico SDK like:
 
