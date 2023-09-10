@@ -2,6 +2,10 @@
 
 This assignment uses the Raspberry Pi Pico H (non-W no wireless version) as handed out in class.
 
+Each student please fork this "2023-hw-mini" repository.
+Then clone your forked repository to your local machine as you write your code and results.
+The **final submission will be a link to your forked repository** containing your code and JSON files as specified in the exercises and projects below.
+
 In this Git repository, the directory
 [python/](../python)
 contains MicroPython script that flashes the LED while simultaneously reading onboard temperature, demonstrating multi-threading on the dual-core CPU of the Pi Pico.
