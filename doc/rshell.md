@@ -1,7 +1,8 @@
 # rshell MicroPython connection
 
 [rshell](https://github.com/dhylands/rshell/)
-Python program is used to test and upload Python scripts on the Pico.
+Python program is used to test and upload Python scripts on the Pico
+[console](./console.md).
 If the script is named "main.py", it will autorun when the Pico starts.
 
 NOTE: don't use "sudo" when installing rshell, this is adequate:

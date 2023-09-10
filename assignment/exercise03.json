@@ -1,0 +1,8 @@
+{
+    "exit_threshold_ms": 3000,
+    "dot_dash_threshold_ms": 200,
+    "sample_ms": 10,
+    "blink_fast_ms": 100,
+    "blink_slow_ms": 200,
+    "inter_letter_ms": 500
+}

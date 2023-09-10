@@ -1,0 +1,36 @@
+# Miniproject assignment
+
+This assignment uses the Raspberry Pi Pico H (non-W no wireless version) as handed out in class.
+
+In this Git repository, the directory
+[python/](../python)
+contains MicroPython script that flashes the LED while simultaneously reading onboard temperature, demonstrating multi-threading on the dual-core CPU of the Pi Pico.
+
+## Exercises
+
+* [Exercise 01](./exercise01.md)
+* [Exercise 02](./exercise02.md)
+* [Exercise 03](./exercise03.md)
+* [Exercise 04](./exercise04.md)
+
+## Project
+
+[Project 01](./project01.md): single-threaded response-time measurement
+
+[Project 02](./project02.md): dual-threaded response-time measurement
+## Summary
+
+This assignment has a few exercises and finally has the student create a multi-threaded Python script to make a response-time measurement where the human presses the tactile switch when they see the LED flash.
+Be creative!
+
+This assignment is done in teams of two students.
+Each student has their own Pico H, breadboard and circuit components.
+Although you can work in your own Git repos, please decide on a single Git repo to have as your final assignment submitted.
+
+## Rubric
+
+Score out of 10 points total:
+
+* 4 points: Exercises 01-04 linked at the top of this page
+* 3 points: Project 01: single-threaded response-time measurement
+* 3 points: Project 02: dual-threaded response-time measurement

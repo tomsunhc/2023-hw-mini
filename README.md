@@ -2,7 +2,7 @@
 
 [![ci](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml/badge.svg)](https://github.com/BostonUniversitySeniorDesign/2023-hw-mini/actions/workflows/ci.yml)
 
-[ASSIGNMENT](./assigment.md)
+[ASSIGNMENT](./assignment/)
 
 This project uses the Raspberry
 [Pi Pico H](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)
