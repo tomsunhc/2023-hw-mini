@@ -1,6 +1,9 @@
 # Circuit notes
 
 We provide a photocell, resistor, and two tactile switches along with the breadboard wirekit and Raspberry Pi Pico H.
+Refer to the
+[Pico pinout diagram](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf)
+to determine the connections to analog and digital IO.
 The photocell and resistor are use with an ADC input of the Pico to measure light level.
 The two tactile switches are used to control the program via digital GPIO pins of the Pico.
 
