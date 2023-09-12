@@ -169,4 +169,8 @@ def record(params: dict) -> str:
 if __name__ == "__main__":
     params = get_params("exercise03.json")
 
+    # %% play wakeup hello message
+    play("hello", params)
+
+    # %% record and playback message
     play(record(params), params)
