@@ -11,7 +11,8 @@ This Python script is a rudimentary
 decoder and playback system using a tactile switch and onboard LED.
 The tactile switch is used to enter Morse Code, and the onboard LED is used to playback the Morse Code.
 
-The tactile switch is connected to GPIO 16 and ground.
+The tactile switch is connected between GPIO 16 and ground.
+Or, you can change this line of code if you wish to use another GPIO pin.
 This is indicated by the line of code
 
 ```python

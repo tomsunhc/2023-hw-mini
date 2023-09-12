@@ -14,7 +14,7 @@ If you already have Python on your computer, you can type in Terminal:
 python -m pip install thonny
 ```
 
-and then to start Thonny type:
+and then to start Thonny type in Terminal:
 
 ```sh
 thonny
@@ -45,7 +45,7 @@ Upon clicking "OK" and with a Pico already connected, Thonny shell should show a
 If you don't see that message or get a connection error, try:
 
 * clicking the Red "stop" button in the Thonny toolbar
-* unplugging and plugging in the Pico and clicking the red "stop" button in the Thonny toolbar
+* unplugging and plugging in the Pico and click the red "stop" button in the Thonny toolbar
 
 This should get you to the MicroPython prompt ">>>" upon pressing Enter.
 
@@ -57,3 +57,12 @@ If you name the file "main.py", that program will always run automatically when 
 
 If you named the Pico Python file "main.py" it will run automatically.
 Pressing the "stop" button in Thonny will stop the program and restart main.py.
+
+## Troubleshooting
+
+If when running the MicroPython code you get an error like:
+
+> ModuleNotFoundError: No module named 'machine'
+
+this usually means you're running the code on your computer instead of the Pico.
+In Thonny, click "Tools - Interpreter" and select "MicroPython (Raspberry Pi Pico)" to automatically run on the Pico instead of your laptop.
