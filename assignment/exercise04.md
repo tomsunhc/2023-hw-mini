@@ -5,7 +5,8 @@
 [Exercise 04 Questions](#questions)
 
 Taking what we learned in the prior exercises, let's prepare the exercise04.py script for a quality program.
-Connect the photocell using the 10k ohm resistor as a voltage divider [circuit](../doc/circuit.md).
+Connect the photocell using the 10k ohm resistor as a voltage divider
+[circuit](../doc/circuit.md).
 
 ## Questions
 
@@ -19,3 +20,10 @@ Experiment to find approximate max_bright and min_bright values that:
 
 Please put these values in the exercise04.json file and read them with your own version of exercise04.py.
 This exercise04.json and exercise04.py should be in your own Git repo, and are the "answers" for Exercise 04.
+
+## Notes
+
+Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
+Experimentally in the "flipped classroom" we found that in this while loop if duty cycle gets larger than 1, the sampling rate slows down!
+In any case, duty cycle greater than 1 is undefined.
+To be sensible we clip the duty cycle to the range [0, 1].
