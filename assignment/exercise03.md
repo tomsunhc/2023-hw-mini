@@ -12,7 +12,8 @@ decoder and playback system using a tactile switch and onboard LED.
 Numerous microcontroller implementations of Morse Code decoders have existed for decades.
 This one is very simple, but is enough to demonstrate time-dependent reading of a digital input.
 
-A more sophisticated implementation would use dynamic thresholds instead of fixed dot/dash times--we're not going to do that here, but it leads into Question 1.
+A more correct implementation would use dot-dash ratios instead of fixed dot/dash times.
+We're not going to do that here, but it leads into Question 1.
 That is, in a real system, we'd want to be running more code than this that requires us to not have such a "good" i.e. small sample time.
 That's because each loop iteration must complete within the allotted time (especially if in the same thread, but even if in a separate thread) to measure dot-dash timing.
 
