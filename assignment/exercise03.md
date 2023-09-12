@@ -4,7 +4,7 @@
 
 [Exercise 03 Questions](#questions)
 
-![Morse code table](https://en.wikipedia.org/wiki/File:International_Morse_Code.svg)
+![Morse code table from https://en.wikipedia.org/wiki/File:International_Morse_Code.svg (public domain)](./morse_code.png)
 
 This Python script is a rudimentary
 [Morse Code](https://en.wikipedia.org/wiki/Morse_code)
