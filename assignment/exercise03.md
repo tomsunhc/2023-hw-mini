@@ -9,6 +9,22 @@
 This Python script is a rudimentary
 [Morse Code](https://en.wikipedia.org/wiki/Morse_code)
 decoder and playback system using a tactile switch and onboard LED.
+The tactile switch is used to enter Morse Code, and the onboard LED is used to playback the Morse Code.
+
+The tactile switch is connected to GPIO 16 and ground.
+This is indicated by the line of code
+
+```python
+button = Pin(16, Pin.IN, Pin.PULL_UP)
+```
+
+because we've chosen the pin to be "PULL_UP" this means internal to the RP2040 CPU, there is a resistor connected inline with 3V3 supplied to GPIO 16.
+Connecting GPIO 16 with pull up to ground via the tactile switch is sensed by the CPU as a near-zero voltage i.e. "active low" which is used in Python code line
+
+```python
+if button.value() == 0:
+```
+
 Numerous microcontroller implementations of Morse Code decoders have existed for decades.
 This one is very simple, but is enough to demonstrate time-dependent reading of a digital input.
 
