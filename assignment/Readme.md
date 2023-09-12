@@ -22,6 +22,7 @@ contains MicroPython script that flashes the LED while simultaneously reading on
 [Project 01](./project01.md): single-threaded response-time measurement
 
 [Project 02](./project02.md): dual-threaded response-time measurement
+
 ## Summary
 
 This assignment has a few exercises and finally has the student create a multi-threaded Python script to make a response-time measurement where the human presses the tactile switch when they see the LED flash.
