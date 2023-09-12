@@ -36,6 +36,8 @@ Assuming you've downloaded the file named like "rp2-pico-20230426-v1.20.0.uf2" c
 
 ![bootsel switch](./bootsel.png)
 
+You don't have to use the BOOTSEL button any more after installing MicroPython, as MicroPython will always start when the Pico is powered up.
+
 ### Windows
 
 Windows File Explorer will show the Pico under "This PC" "RPI-RP2".
