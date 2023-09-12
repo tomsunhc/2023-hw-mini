@@ -7,12 +7,12 @@
 Taking what we learned in the prior exercises, let's prepare the exercise04.py script for a quality program.
 Connect the photocell using the 10k ohm resistor as a voltage divider [circuit](../doc/circuit.md).
 
-
 ## Questions
 
-Let's calibrate the light sensor to be meaningful.
-If you don't want to put a light calibration app on your phone that's fine.
-Instead we could experiment to find the max_bright and min_bright values that:
+Let's "calibrate" the light sensor to be meaningful.
+These values will change with room illumination and the specific photocell you have.
+We are just getting rough estimates, something other than the default values I used.
+Experiment to find approximate max_bright and min_bright values that:
 
 * max_bright: make the LED duty cycle about 100% when in bright light (sunlight, room light)
 * min_bright: make the LED duty cycle about 0% when in very dim light (dark room, covered with hand)
