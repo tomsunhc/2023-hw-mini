@@ -20,6 +20,18 @@ and then to start Thonny type:
 thonny
 ```
 
+### macOS
+
+If on macOS and you used the Thonny .pkg file from
+[Thonny.org](https://thonny.org/),
+use macOS Spotlight to find Thonny and start it--press Command-space and type "thonny" and press Enter.
+
+### Windows
+
+If on Windows and you used the Thonny .exe file from
+[Thonny.org](https://thonny.org/),
+Thonny is installed in the Windows Start menu under Thonny.
+
 ## Initial connection
 
 Start Thonny and click "Tools - Interpreter" and select "MicroPython (Raspberry Pi Pico)".
