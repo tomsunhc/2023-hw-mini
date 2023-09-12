@@ -12,10 +12,13 @@ Each student must provide a USB cable that connects to their macOS, Windows, or 
 The student laptop is used to program the Pico.
 The laptop software works on macOS, Windows, and Linux.
 
-Use a programming language of your choice such as:
-
-* [MicroPython](./doc/micropython.md) (recommended, faster, easier) [Raspberry Pi Pico MicroPython Tutorial](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico)
-* C/C++ via [Pico SDK](./doc/pico-sdk.md) (optional, more difficult, requires a cross-compiler on the laptop)
+This miniproject focuses on using
+[MicroPython](./doc/micropython.md)
+using
+[Thonny IDE](./doc/thonny.md).
+You're welcome to other IDE and interface such as Visual Studio Code or
+[rshell](./doc/rshell.md),
+but generally folks find the Thonny IDE to be faster and easier to work with.
 
 We will be reading an analog voltage using the onboard Pico ADC and indicating the measurement using the onboard Pico LED in a **multithread program** using both CPU cores of the Pico RP2040 dual-core CPU.
 
@@ -23,4 +26,5 @@ We will be reading an analog voltage using the onboard Pico ADC and indicating t
 
 [Troubleshooting](./doc/trouble.md)
 
-Reference: [Getting Started with Pi Pico book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+* [Getting Started with Pi Pico book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+* [MicroPython Tutorial for Pi Pico](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico)

@@ -21,7 +21,7 @@ In this exercise, copy both "exercise02.py" and "exercise02.json" to the Pico so
 Edit / run the exercise02.py script on the Pico -- with Thonny this is done from the Files tab by right-clicking exercise02.py and selecting "open in Thonny".
 Thonny shows tab "[exercise02.py]" where the brackets `[]` indicate the file is remote on the Pico.
 
-To download a file that you've edited on the Pico back to your computer to upload to Git, in Thonny Files tab, right-click the file on the Pico and select "Download to ..." where "..." is the directory on your computer to save the file.
+For future reference (not necessary for this specific exercise): to download a file that you've edited on the Pico back to your computer to upload to Git, in Thonny Files tab, right-click the file on the Pico and select "Download to ..." where "..." is the directory on your computer to save the file.
 
 ## Questions
 

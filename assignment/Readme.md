@@ -2,9 +2,16 @@
 
 This assignment uses the Raspberry Pi Pico H (non-W no wireless version) as handed out in class.
 
+Feel free to use AI assistants if you wish such as ChatGPT, GitHub Copilot, etc.
+As a software engineer I also use these AI tools, but they regularly make mistakes, sometimes subtle mistakes.
+
 Each student please fork this "2023-hw-mini" repository.
-Then clone your forked repository to your local machine as you write your code and results.
-The **final submission will be a link to your forked repository** containing your code and JSON files as specified in the exercises and projects below.
+Then `git clone` your forked repository to your local machine as you write your code and results.
+The **final submission will be a link to your forked GitHub repository** containing your code and JSON files as specified in the exercises and projects below.
+For question responses please make a top-level "Report.md" file in your forked GitHub repository.
+If you choose to make your GitHub repository "Private", then you would need to add my GitHub username
+[drhirsch](https://github.com/drhirsch)
+under Repository Settings as a read-only Collaborator
 
 In this Git repository, the directory
 [python/](../python)
