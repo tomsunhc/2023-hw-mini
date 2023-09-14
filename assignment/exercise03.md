@@ -34,6 +34,10 @@ We're not going to do that here, but it leads into Question 1.
 That is, in a real system, we'd want to be running more code than this that requires us to not have such a "good" i.e. small sample time.
 That's because each loop iteration must complete within the allotted time (especially if in the same thread, but even if in a separate thread) to measure dot-dash timing.
 
+Distinct from Exercise 02, instead of my own "is_regular_file" copied into Exercise 03, I have used micropython-libs standard library pathlib.py, an updated version that I've made a [pull request](https://github.com/micropython/micropython-lib/pull/727) to the micropython-libs project.
+As noted in [micropython-libs docs](https://github.com/micropython/micropython-lib#copy-the-files-manually)
+a way to use these standard libraries is to simply copy them into the "/lib" directory on the Pico (you can also put them in the same directory as the Python script on the Pico, but the more "correct" way is to put pathlib.py in "/lib" on the Pico).
+
 ## Questions
 
 ### Question 1
