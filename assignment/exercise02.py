@@ -31,7 +31,7 @@ def is_regular_file(path: str) -> bool:
     S_IFREG = 0x8000
 
     try:
-        return os.stat(path)[0] & S_IFREG != 0
+        return bool(os.stat(path)[0] & S_IFREG)
     except OSError:
         return False
 
