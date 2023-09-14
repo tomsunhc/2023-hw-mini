@@ -5,9 +5,12 @@ based on https://github.com/printnplay/Pico-MicroPython/blob/main/MorseCodeCreat
 """
 
 from machine import Pin
+
+from pathlib import Path
+# need to also copy pathlib.py to the Pico
+
 import time
 import json
-import os
 
 # Create a dictionary of Morse Code. s is for Short (or dots), l is for Long (or dashes)
 MorseCodes = {
@@ -54,24 +57,14 @@ MorseCodes = {
 def get_params(param_file: str) -> dict:
     """Reads parameters from a JSON file."""
 
-    if not is_regular_file(param_file):
+    param_path = Path(param_file).expanduser()
+    if not param_path.is_file():
         raise OSError(f"File {param_file} not found")
 
     with open(param_file) as f:
         params = json.load(f)
 
     return params
-
-
-def is_regular_file(path: str) -> bool:
-    """Checks if a regular file exists."""
-
-    S_IFREG = 0x8000
-
-    try:
-        return os.stat(path)[0] & S_IFREG != 0
-    except OSError:
-        return False
 
 
 def letterlookup(stringvalue: str) -> str:
