@@ -88,7 +88,7 @@ data = {}
 now: tuple[int] = time.localtime()
 
 now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
-filename = f"prob1-{now_str}.json"
+filename = f"proj1-{now_str}.json"
 
 print("write", filename)
 
