@@ -61,7 +61,7 @@ def get_params(param_file: str) -> dict:
     if not param_path.is_file():
         raise OSError(f"File {param_file} not found")
 
-    with open(param_file) as f:
+    with param_path.open("r") as f:
         params = json.load(f)
 
     return params
