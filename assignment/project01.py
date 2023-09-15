@@ -48,7 +48,33 @@ def write_json(json_filename: str, data: dict) -> None:
         json.dump(data, f)
 
 
-t: list[float | None] = []
+def scorer(t: list[int | None]) -> None:
+    # %% collate results
+    misses = t.count(None)
+    print(f"You missed the light {misses} / {len(t)} times")
+
+    t_good = [x for x in t if x is not None]
+
+    print(t_good)
+
+    # add key, value to this dict to store the minimum, maximum, average response time
+    # and score (non-misses / total flashes) i.e. the score a floating point number
+    # is in range [0..1]
+    data = {}
+
+    # %% make dynamic filename and write JSON
+
+    now: tuple[int] = time.localtime()
+
+    now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
+    filename = f"proj1-{now_str}.json"
+
+    print("write", filename)
+
+    write_json(filename, data)
+
+
+t: list[int | None] = []
 
 blinker(3)
 
@@ -70,26 +96,4 @@ for i in range(N):
 
 blinker(5)
 
-# %% collate results
-misses = t.count(None)
-print(f"You missed the light {misses} / {N} times")
-
-t_good = [x for x in t if x is not None]
-
-print(t_good)
-
-# add key, value to this dict to store the minimum, maximum, average response time
-# and score (non-misses / total flashes) i.e. the score a floating point number
-# is in range [0..1]
-data = {}
-
-# %% make dynamic filename and write JSON
-
-now: tuple[int] = time.localtime()
-
-now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
-filename = f"proj1-{now_str}.json"
-
-print("write", filename)
-
-write_json(filename, data)
+scorer(t)
