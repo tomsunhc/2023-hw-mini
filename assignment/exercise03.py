@@ -7,6 +7,7 @@ based on https://github.com/printnplay/Pico-MicroPython/blob/main/MorseCodeCreat
 from machine import Pin
 
 from pathlib import Path
+
 # need to also copy pathlib.py to the Pico
 
 import time
