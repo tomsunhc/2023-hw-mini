@@ -8,11 +8,23 @@ use two simultaneously running threads to:
 import machine
 import time
 import _thread
-
+from pathlib import Path
+import json
 import project01
 
 # project01.py also needs to be copied to the Pico
 
+def get_params(param_file: str) -> dict:
+    """Reads parameters from a JSON file."""
+
+    param_path = Path(param_file).expanduser()
+    if not param_path.is_file():
+        raise OSError(f"File {param_file} not found")
+
+    with open(param_file) as f:
+        params = json.load(f)
+
+    return params
 
 def photocell_logger(N: int, sample_interval_s: float) -> None:
     """
@@ -42,6 +54,9 @@ def photocell_logger(N: int, sample_interval_s: float) -> None:
     #  i.e. two additional key, value in the dict
 
     data = {
+        "start_time":start_time,
+        "end_time":end_time,
+        "sample_interval":sample_interval_s,
         "light_uint16": values,
         "start_time": start_time,
     }
@@ -49,7 +64,7 @@ def photocell_logger(N: int, sample_interval_s: float) -> None:
     now: tuple[int] = time.localtime()
 
     now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
-    filename = f"proj2-light-{now_str}.json"
+    filename = f"proj2-light.json"
 
     print("light measurement done: write", filename)
 
@@ -59,14 +74,16 @@ def photocell_logger(N: int, sample_interval_s: float) -> None:
 def blinker_response_game(N: int) -> None:
     # %% setup input and output pins
     led = machine.Pin("LED", machine.Pin.OUT)
-    button = machine.Pin(16, machine.Pin.IN, machine.Pin.PULL_UP)
-
+    button1 = machine.Pin(16, machine.Pin.IN, machine.Pin.PULL_UP)
+    button2 = machine.Pin(0, machine.Pin.IN, machine.Pin.PULL_UP)
+    
     # %% please read these parameters from JSON file like project 01 instead of hard-coding
-    sample_ms = 10.0
-    on_ms = 500
+    params = get_params("project02.json")
+    sample_ms = params["sample_ms"]
+    on_ms = params["on_ms"]
 
-    t: list[float | None] = []
-
+    tl0: list[float | None] = []
+    tl1: list[float | None] = []
     project01.blinker(3, led)
 
     for i in range(N):
@@ -76,19 +93,29 @@ def blinker_response_game(N: int) -> None:
 
         tic = time.ticks_ms()
         t0 = None
+        t1 = None
         while time.ticks_diff(time.ticks_ms(), tic) < on_ms:
-            if button.value() == 0:
+            if button1.value() == 0:
                 t0 = time.ticks_diff(time.ticks_ms(), tic)
                 led.low()
-                break
-        t.append(t0)
-
+                if button2.value() == 0:
+                    t1 = time.ticks_diff(time.ticks_ms(), tic)
+                    led.low()
+                    break
+            if button2.value() == 0:
+                t1 = time.ticks_diff(time.ticks_ms(), tic)
+                led.low()
+                if button1.value() == 0:
+                    t0 = time.ticks_diff(time.ticks_ms(), tic)
+                    led.low()
+                    break
+        tl0.append(t0)
+        tl1.append(t1)
         led.low()
-
     project01.blinker(5, led)
-
-    project01.scorer(t)
+    project01.scorer(tl0, "proj2-score-player1.json")
+    project01.scorer(tl1, "proj2-score-player2.json")
 
 
 _thread.start_new_thread(photocell_logger, (10, 0.5))
-blinker_response_game(5)
+blinker_response_game(10)
